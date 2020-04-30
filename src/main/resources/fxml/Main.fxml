@@ -1,42 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="mainContainer" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.thrownexception.mcemojis.drawer.controllers.MainController">
+<VBox fx:id="mainContainer" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@/css/Main.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.thrownexception.mcemojis.drawer.controllers.MainController">
    <children>
-      <ScrollPane fx:id="drawer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="999999.0" visible="false" BorderPane.alignment="CENTER">
-         <content>
-            <TilePane hgap="8.0" prefColumns="8" vgap="8.0" />
-         </content>
-         <VBox.margin>
-            <Insets bottom="8.0" />
-         </VBox.margin>
-      </ScrollPane>
-      <HBox fx:id="buttonBar" maxHeight="-Infinity" spacing="8.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="drawer" prefHeight="999999.0">
+         <children>
+            <Label fx:id="hint" text="Label">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="search" promptText="Search...">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin></TextField>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="999999.0" BorderPane.alignment="CENTER">
+               <content>
+                  <TilePane fx:id="tiles" hgap="8.0" prefColumns="8" vgap="8.0">
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding></TilePane>
+               </content>
+            </ScrollPane>
+            <Label fx:id="hoverDesc" text="">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin></Label>
+         </children>
+      </VBox>
+      <HBox spacing="8.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="mainImage" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
                   <Image url="@/assets/main_button.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <ImageView fx:id="drag" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@/assets/drag.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="resize" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@/assets/resize.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="close" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@/assets/close.png" />
-               </image>
-            </ImageView>
+            <HBox fx:id="buttonBar" spacing="8.0">
+               <children>
+                  <ImageView fx:id="send" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/assets/send.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="drag" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/assets/drag.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="resize" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/assets/resize.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="close" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/assets/close.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </HBox>
    </children>
