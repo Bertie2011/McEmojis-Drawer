@@ -80,3 +80,4 @@ fabric.properties
 .idea/httpRequests
 
 src/main/resources/assets/emoji
+src/main/resources/assets/drawer-data.json
