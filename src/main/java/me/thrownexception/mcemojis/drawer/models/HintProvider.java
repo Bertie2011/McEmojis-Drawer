@@ -4,10 +4,9 @@ import java.util.Random;
 
 public class HintProvider {
     private static final String[] hints = new String[] {
-            "Visit mc-emojis.com for updates and credits!",
-            "Click any emoji to insert it into Minecraft.",
+            "Visit mc-emojis.com for updates!",
             "Right-click any emoji to insert its escaped unicode.",
-            "The emojis are copyright free."
+            "The emojis are open source and copyright free."
     };
     private static final Random RANDOM = new Random();
 
