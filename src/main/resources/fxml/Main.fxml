@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="mainContainer" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@/css/Main.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.thrownexception.mcemojis.drawer.controllers.MainController">
+<VBox fx:id="mainContainer" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.thrownexception.mcemojis.drawer.controllers.MainController">
    <children>
       <VBox fx:id="drawer" prefHeight="999999.0">
          <children>
@@ -36,7 +36,7 @@
          <children>
             <ImageView fx:id="mainImage" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@/assets/main_button.png" />
+                  <Image url="@../assets/main_button.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -46,7 +46,7 @@
                <children>
                   <ImageView fx:id="send" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/assets/send.png" />
+                        <Image url="@../assets/send.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -54,7 +54,7 @@
                   </ImageView>
                   <ImageView fx:id="drag" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/assets/drag.png" />
+                        <Image url="@../assets/drag.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -62,7 +62,7 @@
                   </ImageView>
                   <ImageView fx:id="resize" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/assets/resize.png" />
+                        <Image url="@../assets/resize.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -70,7 +70,7 @@
                   </ImageView>
                   <ImageView fx:id="close" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/assets/close.png" />
+                        <Image url="@../assets/close.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />

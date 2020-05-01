@@ -51,6 +51,7 @@ public class MainController {
     private final double MIN_SIZE = 12;
     private final int DRAWER_TILES_HEIGHT = 4;
     private final int DRAWER_TILES_WIDTH = 12;
+    private final String DATA_PATH = "/assets/drawer-data.json";
     private DoubleProperty emojiSize = new SimpleDoubleProperty(24);
     private double dragX;
     private double dragY;
@@ -102,7 +103,7 @@ public class MainController {
             });
             search.setOnKeyTyped(e -> EmojiTileFactory.filter(tiles, search.getText()));
             Gson gson = new GsonBuilder().create();
-            JsonArray data = gson.fromJson(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("assets/drawer-data.json")), JsonArray.class);
+            JsonArray data = gson.fromJson(new InputStreamReader(getClass().getResourceAsStream(DATA_PATH)), JsonArray.class);
 
             new Thread(() -> EmojiTileFactory.createTiles(tiles, data, hoverDesc, emojiSize)).start();
         });

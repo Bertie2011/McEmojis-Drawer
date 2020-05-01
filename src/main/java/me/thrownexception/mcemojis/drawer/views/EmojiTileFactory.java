@@ -24,7 +24,7 @@ import java.util.concurrent.*;
 
 public class EmojiTileFactory {
 
-    private static final String EMOJI_PATH = "assets/emoji/";
+    private static final String EMOJI_PATH = "/assets/emoji/";
     private static final String MODIFIERS_KEY = "modifiers";
     private static final String FILE_NAME_KEY = "fileName";
     private static final String MC_CODE_KEY = "mcCode";
@@ -40,7 +40,7 @@ public class EmojiTileFactory {
                 JsonObject modifier = base.getAsJsonArray(MODIFIERS_KEY).get(0).getAsJsonObject();
                 String filename = modifier.get(FILE_NAME_KEY).getAsString();
                 String description = modifier.get(DESCRIPTION_KEY).getAsString();
-                Image image = new Image(EmojiTileFactory.class.getClassLoader().getResourceAsStream(EMOJI_PATH + filename));
+                Image image = new Image(EmojiTileFactory.class.getResourceAsStream(EMOJI_PATH + filename));
                 ImageView imageView = new ImageView(image);
                 imageView.fitWidthProperty().bind(size);
                 imageView.fitHeightProperty().bind(size);

@@ -18,7 +18,9 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/Main.fxml"));
+        System.out.println("\nYou can minimize this window!\n");
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
         Scene scene = new Scene(loader.load(), 200, 100);
         controller = loader.getController();
         primaryStage.setScene(scene);
@@ -26,6 +28,6 @@ public class MainApp extends Application {
         primaryStage.setAlwaysOnTop(true);
         primaryStage.setResizable(false);
         primaryStage.show();
-        primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("assets/main_button.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/assets/main_button.png")));
     }
 }
