@@ -22,6 +22,8 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import me.thrownexception.mcemojis.drawer.models.HintProvider;
 import me.thrownexception.mcemojis.drawer.views.EmojiTileFactory;
+import me.thrownexception.mcemojis.drawer.views.TextWriter;
+
 import java.io.InputStreamReader;
 
 public class MainController {
@@ -105,7 +107,8 @@ public class MainController {
             Gson gson = new GsonBuilder().create();
             JsonArray data = gson.fromJson(new InputStreamReader(getClass().getResourceAsStream(DATA_PATH)), JsonArray.class);
 
-            new Thread(() -> EmojiTileFactory.createTiles(tiles, data, hoverDesc, emojiSize)).start();
+            TextWriter writer = new TextWriter(new Robot());
+            new Thread(() -> EmojiTileFactory.createTiles(tiles, data, hoverDesc, emojiSize, writer)).start();
         });
     }
 

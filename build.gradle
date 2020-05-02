@@ -38,9 +38,11 @@ jlink {
     }
     targetPlatform('linux') {
         jdkHome = 'C:/Program Files/Java/jdk-14.0.1-linux'
+        addExtraModulePath('C:/Program Files/Java/openJFX-jmods-11.0.2-linux')
     }
     targetPlatform('macOS') {
         jdkHome = 'C:/Program Files/Java/jdk-14.0.1-macOS'
+        addExtraModulePath('C:/Program Files/Java/openJFX-jmods-11.0.2-macOS')
     }
 }
 
