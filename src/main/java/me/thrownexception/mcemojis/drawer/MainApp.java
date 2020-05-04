@@ -18,8 +18,6 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        System.out.println("\nYou can minimize this window!\n");
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
         Scene scene = new Scene(loader.load(), 200, 100);
         controller = loader.getController();
